@@ -38,7 +38,6 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
-    QTableWidget *tableWidget;
     QTabWidget *tabWidget;
     QWidget *find;
     QGridLayout *gridLayout_5;
@@ -81,8 +80,6 @@ public:
     QGridLayout *gridLayout_7;
     QGroupBox *groupBox_6;
     QFormLayout *formLayout_3;
-    QLabel *label_8;
-    QSpinBox *spinBox_3;
     QLabel *label_9;
     QLineEdit *lineEdit_3;
     QLabel *label_10;
@@ -137,6 +134,7 @@ public:
     QPushButton *pushButton_9;
     QPushButton *pushButton_12;
     QPushButton *pushButton_10;
+    QTableWidget *tableWidget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -150,31 +148,6 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        tableWidget = new QTableWidget(centralwidget);
-        if (tableWidget->columnCount() < 8)
-            tableWidget->setColumnCount(8);
-        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
-        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
-        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem3);
-        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
-        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(5, __qtablewidgetitem5);
-        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(6, __qtablewidgetitem6);
-        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(7, __qtablewidgetitem7);
-        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
-        tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-        tableWidget->horizontalHeader()->setCascadingSectionResizes(false);
-
-        gridLayout->addWidget(tableWidget, 0, 0, 1, 1);
-
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setMaximumSize(QSize(400, 16777215));
@@ -196,7 +169,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 377, 759));
+        scrollAreaWidgetContents->setGeometry(QRect(0, -281, 377, 759));
         gridLayout_4 = new QGridLayout(scrollAreaWidgetContents);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
         groupBox = new QGroupBox(scrollAreaWidgetContents);
@@ -408,62 +381,49 @@ public:
         groupBox_6->setCheckable(false);
         formLayout_3 = new QFormLayout(groupBox_6);
         formLayout_3->setObjectName(QString::fromUtf8("formLayout_3"));
-        label_8 = new QLabel(groupBox_6);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setMinimumSize(QSize(100, 0));
-        label_8->setFont(font);
-
-        formLayout_3->setWidget(0, QFormLayout::LabelRole, label_8);
-
-        spinBox_3 = new QSpinBox(groupBox_6);
-        spinBox_3->setObjectName(QString::fromUtf8("spinBox_3"));
-        spinBox_3->setMaximum(99999999);
-
-        formLayout_3->setWidget(0, QFormLayout::FieldRole, spinBox_3);
-
         label_9 = new QLabel(groupBox_6);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setMinimumSize(QSize(100, 0));
         label_9->setFont(font);
 
-        formLayout_3->setWidget(1, QFormLayout::LabelRole, label_9);
+        formLayout_3->setWidget(0, QFormLayout::LabelRole, label_9);
 
         lineEdit_3 = new QLineEdit(groupBox_6);
         lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
 
-        formLayout_3->setWidget(1, QFormLayout::FieldRole, lineEdit_3);
+        formLayout_3->setWidget(0, QFormLayout::FieldRole, lineEdit_3);
 
         label_10 = new QLabel(groupBox_6);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setMinimumSize(QSize(100, 0));
         label_10->setFont(font);
 
-        formLayout_3->setWidget(2, QFormLayout::LabelRole, label_10);
+        formLayout_3->setWidget(1, QFormLayout::LabelRole, label_10);
 
         lineEdit_4 = new QLineEdit(groupBox_6);
         lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
 
-        formLayout_3->setWidget(2, QFormLayout::FieldRole, lineEdit_4);
+        formLayout_3->setWidget(1, QFormLayout::FieldRole, lineEdit_4);
 
         label_11 = new QLabel(groupBox_6);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setMinimumSize(QSize(100, 0));
         label_11->setFont(font);
 
-        formLayout_3->setWidget(3, QFormLayout::LabelRole, label_11);
+        formLayout_3->setWidget(2, QFormLayout::LabelRole, label_11);
 
         spinBox_4 = new QSpinBox(groupBox_6);
         spinBox_4->setObjectName(QString::fromUtf8("spinBox_4"));
         spinBox_4->setMaximum(99999999);
 
-        formLayout_3->setWidget(3, QFormLayout::FieldRole, spinBox_4);
+        formLayout_3->setWidget(2, QFormLayout::FieldRole, spinBox_4);
 
         label_13 = new QLabel(groupBox_6);
         label_13->setObjectName(QString::fromUtf8("label_13"));
         label_13->setMinimumSize(QSize(100, 0));
         label_13->setFont(font);
 
-        formLayout_3->setWidget(4, QFormLayout::LabelRole, label_13);
+        formLayout_3->setWidget(3, QFormLayout::LabelRole, label_13);
 
         comboBox_2 = new QComboBox(groupBox_6);
         comboBox_2->addItem(QString());
@@ -471,13 +431,13 @@ public:
         comboBox_2->addItem(QString());
         comboBox_2->setObjectName(QString::fromUtf8("comboBox_2"));
 
-        formLayout_3->setWidget(4, QFormLayout::FieldRole, comboBox_2);
+        formLayout_3->setWidget(3, QFormLayout::FieldRole, comboBox_2);
 
         pushButton_4 = new QPushButton(groupBox_6);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setFont(font1);
 
-        formLayout_3->setWidget(5, QFormLayout::FieldRole, pushButton_4);
+        formLayout_3->setWidget(4, QFormLayout::FieldRole, pushButton_4);
 
 
         gridLayout_7->addWidget(groupBox_6, 0, 0, 1, 1);
@@ -702,7 +662,7 @@ public:
         pushButton_11->setObjectName(QString::fromUtf8("pushButton_11"));
         pushButton_11->setMinimumSize(QSize(0, 50));
 
-        gridLayout_17->addWidget(pushButton_11, 0, 0, 1, 1);
+        gridLayout_17->addWidget(pushButton_11, 6, 0, 1, 1);
 
         pushButton = new QPushButton(groupBox_17);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
@@ -720,13 +680,13 @@ public:
         pushButton_12->setObjectName(QString::fromUtf8("pushButton_12"));
         pushButton_12->setMinimumSize(QSize(0, 50));
 
-        gridLayout_17->addWidget(pushButton_12, 3, 0, 1, 1);
+        gridLayout_17->addWidget(pushButton_12, 4, 0, 1, 1);
 
         pushButton_10 = new QPushButton(groupBox_17);
         pushButton_10->setObjectName(QString::fromUtf8("pushButton_10"));
         pushButton_10->setMinimumSize(QSize(0, 50));
 
-        gridLayout_17->addWidget(pushButton_10, 4, 0, 1, 1);
+        gridLayout_17->addWidget(pushButton_10, 3, 0, 1, 1);
 
 
         gridLayout_16->addWidget(groupBox_17, 0, 0, 1, 1);
@@ -734,6 +694,34 @@ public:
         tabWidget->addTab(sort, QString());
 
         gridLayout->addWidget(tabWidget, 0, 1, 1, 1);
+
+        tableWidget = new QTableWidget(centralwidget);
+        if (tableWidget->columnCount() < 8)
+            tableWidget->setColumnCount(8);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(5, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(6, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(7, __qtablewidgetitem7);
+        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+        tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+        tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+        tableWidget->setTextElideMode(Qt::ElideLeft);
+        tableWidget->horizontalHeader()->setCascadingSectionResizes(false);
+
+        gridLayout->addWidget(tableWidget, 0, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -755,22 +743,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "Id", nullptr));
-        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
-        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QCoreApplication::translate("MainWindow", "Price", nullptr));
-        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QCoreApplication::translate("MainWindow", "Count", nullptr));
-        QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
-        ___qtablewidgetitem4->setText(QCoreApplication::translate("MainWindow", "Code", nullptr));
-        QTableWidgetItem *___qtablewidgetitem5 = tableWidget->horizontalHeaderItem(5);
-        ___qtablewidgetitem5->setText(QCoreApplication::translate("MainWindow", "Type", nullptr));
-        QTableWidgetItem *___qtablewidgetitem6 = tableWidget->horizontalHeaderItem(6);
-        ___qtablewidgetitem6->setText(QCoreApplication::translate("MainWindow", "Date added", nullptr));
-        QTableWidgetItem *___qtablewidgetitem7 = tableWidget->horizontalHeaderItem(7);
-        ___qtablewidgetitem7->setText(QCoreApplication::translate("MainWindow", "Date of change", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "Find one", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Id", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
@@ -794,7 +766,6 @@ public:
 
         tabWidget->setTabText(tabWidget->indexOf(find), QCoreApplication::translate("MainWindow", "Find item", nullptr));
         groupBox_6->setTitle(QCoreApplication::translate("MainWindow", "Add", nullptr));
-        label_8->setText(QCoreApplication::translate("MainWindow", "Id", nullptr));
         label_9->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "Code", nullptr));
         label_11->setText(QCoreApplication::translate("MainWindow", "Count", nullptr));
@@ -834,6 +805,22 @@ public:
         pushButton_12->setText(QCoreApplication::translate("MainWindow", "Sort by date of change", nullptr));
         pushButton_10->setText(QCoreApplication::translate("MainWindow", "Sort by price", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(sort), QCoreApplication::translate("MainWindow", "Sort", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "Id", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("MainWindow", "Price", nullptr));
+        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("MainWindow", "Count", nullptr));
+        QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("MainWindow", "Code", nullptr));
+        QTableWidgetItem *___qtablewidgetitem5 = tableWidget->horizontalHeaderItem(5);
+        ___qtablewidgetitem5->setText(QCoreApplication::translate("MainWindow", "Type", nullptr));
+        QTableWidgetItem *___qtablewidgetitem6 = tableWidget->horizontalHeaderItem(6);
+        ___qtablewidgetitem6->setText(QCoreApplication::translate("MainWindow", "Date added", nullptr));
+        QTableWidgetItem *___qtablewidgetitem7 = tableWidget->horizontalHeaderItem(7);
+        ___qtablewidgetitem7->setText(QCoreApplication::translate("MainWindow", "Date of change", nullptr));
     } // retranslateUi
 
 };
