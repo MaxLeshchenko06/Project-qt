@@ -10,17 +10,21 @@ CONFIG += c++17
 
 SOURCES += \
     dialogedititem.cpp \
+    findtable.cpp \
     main.cpp \
     mainwindow.cpp \
     product.cpp
 
 HEADERS += \
     dialogedititem.h \
+    findtable.h \
     mainwindow.h \
+    myexception.h \
     product.h
 
 FORMS += \
     dialogedititem.ui \
+    findtable.ui \
     mainwindow.ui
 
 # Default rules for deployment.

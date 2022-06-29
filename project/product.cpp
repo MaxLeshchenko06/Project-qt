@@ -1,8 +1,17 @@
 #include "product.h"
 
-Product::Product(int id, QString name, float price, int count, QString type, QString code, QDate dateAdded, QDate dateOfChange):
-    id{id}, name{name}, price{price}, count{count}, type{type}, code{code}, dateAdded{dateAdded}, dateOfChange{dateOfChange}
-{}
+Product::Product(int id, QString name, float price, int count, QString type, QString code, QDate dateAdded, QDate dateOfChange)
+{
+    this->id = id;
+    this->name = name;
+    this->price = price;
+    this->count = count;
+    this->type = type;
+    this->code = code;
+    this->dateAdded = dateAdded;
+    this->dateOfChange = dateOfChange;
+
+}
 
 Product::~Product()
 {

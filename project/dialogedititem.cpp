@@ -37,19 +37,27 @@ void DialogEditItem::on_pushButton_3_clicked()
 
 void DialogEditItem::on_pushButton_clicked()
 {
+    try{
     QString name = ui->lineEdit_2->text();
     float price = ui->doubleSpinBox->value();
     int count = ui->spinBox->value();
     QString code = ui->lineEdit_3->text();
+    if(name == "" || code == "")
+        throw new EmptyValues();
+    for(int i = 0; i < base.size(); i++)
+        if((name == base[i]->getName() || code == base[i]->getCode()) && i != index)
+            throw new RepeatingValues();
     QString type = ui->comboBox->currentText();
+    QDate d(QDate::currentDate());
 
-    query->prepare("UPDATE products SET Name = :name, Price = :price, Count = :count, Code = :code, Type = :type WHERE Id = :id");
+    query->prepare("UPDATE products SET Name = :name, Price = :price, Count = :count, Code = :code, Type = :type, [Date of change] = :date WHERE Id = :id");
     query->bindValue(":name", name);
     query->bindValue(":price", price);
     query->bindValue(":count", count);
     query->bindValue(":code", code);
     query->bindValue(":type", type);
     query->bindValue(":id", base[index]->getId());
+    query->bindValue(":date", d.toString("dd.MM.yyyy"));
     query->exec();
 
     base[index]->setName(name);
@@ -57,8 +65,13 @@ void DialogEditItem::on_pushButton_clicked()
     base[index]->setCount(count);
     base[index]->setCode(code);
     base[index]->setType(type);
+    base[index]->setDateOfChange(d);
     valueChanged();
     this->close();
+    }
+    catch(Exception* obj){
+        obj->showMsg(this);
+    }
 }
 
 
