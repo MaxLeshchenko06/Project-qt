@@ -11,6 +11,8 @@
 #include "dialogedititem.h"
 #include "myexception.h"
 #include "findtable.h"
+#include "client.h"
+#include "clientswindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,6 +28,7 @@ public:
 
 public slots:
     void getProductsFromDB();
+    void getClientsFromDB();
     void showAllProducts();
 private slots:
     void on_tableWidget_itemDoubleClicked(QTableWidgetItem *item);
@@ -40,6 +43,18 @@ private slots:
 
     void on_checkBox_stateChanged(int arg1);
 
+    void on_action_triggered();
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_9_clicked();
+
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_12_clicked();
+
+    void on_pushButton_11_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
@@ -47,5 +62,7 @@ private:
     QVector<Product*> base;
     DialogEditItem* editForm;
     FindTable* findTable;
+    QVector<Client*> clientBase;
+    ClientsWindow* clientsW;
 };
 #endif // MAINWINDOW_H

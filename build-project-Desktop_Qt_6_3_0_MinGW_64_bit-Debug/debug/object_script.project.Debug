@@ -1,0 +1,13 @@
+debug/client.o
+debug/clientswindow.o
+debug/dialogeditclient.o
+debug/dialogedititem.o
+debug/findtable.o
+debug/main.o
+debug/mainwindow.o
+debug/product.o
+debug/moc_clientswindow.o
+debug/moc_dialogeditclient.o
+debug/moc_dialogedititem.o
+debug/moc_findtable.o
+debug/moc_mainwindow.o

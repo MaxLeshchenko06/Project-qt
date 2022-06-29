@@ -1,0 +1,13 @@
+release/client.o
+release/clientswindow.o
+release/dialogeditclient.o
+release/dialogedititem.o
+release/findtable.o
+release/main.o
+release/mainwindow.o
+release/product.o
+release/moc_clientswindow.o
+release/moc_dialogeditclient.o
+release/moc_dialogedititem.o
+release/moc_findtable.o
+release/moc_mainwindow.o

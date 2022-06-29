@@ -10,6 +10,7 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
@@ -22,6 +23,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
@@ -36,6 +38,7 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *action;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QTabWidget *tabWidget;
@@ -95,13 +98,14 @@ public:
     QGridLayout *gridLayout_16;
     QGroupBox *groupBox_17;
     QGridLayout *gridLayout_17;
-    QPushButton *pushButton_11;
-    QPushButton *pushButton;
+    QPushButton *pushButton_10;
     QPushButton *pushButton_9;
     QPushButton *pushButton_12;
-    QPushButton *pushButton_10;
+    QPushButton *pushButton;
+    QPushButton *pushButton_11;
     QTableWidget *tableWidget;
     QMenuBar *menubar;
+    QMenu *menu;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -110,6 +114,8 @@ public:
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(1109, 611);
         MainWindow->setStyleSheet(QString::fromUtf8("background-color: white;"));
+        action = new QAction(MainWindow);
+        action->setObjectName(QString::fromUtf8("action"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
@@ -433,17 +439,11 @@ public:
         groupBox_17->setObjectName(QString::fromUtf8("groupBox_17"));
         gridLayout_17 = new QGridLayout(groupBox_17);
         gridLayout_17->setObjectName(QString::fromUtf8("gridLayout_17"));
-        pushButton_11 = new QPushButton(groupBox_17);
-        pushButton_11->setObjectName(QString::fromUtf8("pushButton_11"));
-        pushButton_11->setMinimumSize(QSize(0, 50));
+        pushButton_10 = new QPushButton(groupBox_17);
+        pushButton_10->setObjectName(QString::fromUtf8("pushButton_10"));
+        pushButton_10->setMinimumSize(QSize(0, 50));
 
-        gridLayout_17->addWidget(pushButton_11, 6, 0, 1, 1);
-
-        pushButton = new QPushButton(groupBox_17);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setMinimumSize(QSize(0, 50));
-
-        gridLayout_17->addWidget(pushButton, 1, 0, 1, 1);
+        gridLayout_17->addWidget(pushButton_10, 3, 0, 1, 1);
 
         pushButton_9 = new QPushButton(groupBox_17);
         pushButton_9->setObjectName(QString::fromUtf8("pushButton_9"));
@@ -455,13 +455,19 @@ public:
         pushButton_12->setObjectName(QString::fromUtf8("pushButton_12"));
         pushButton_12->setMinimumSize(QSize(0, 50));
 
-        gridLayout_17->addWidget(pushButton_12, 4, 0, 1, 1);
+        gridLayout_17->addWidget(pushButton_12, 5, 0, 1, 1);
 
-        pushButton_10 = new QPushButton(groupBox_17);
-        pushButton_10->setObjectName(QString::fromUtf8("pushButton_10"));
-        pushButton_10->setMinimumSize(QSize(0, 50));
+        pushButton = new QPushButton(groupBox_17);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setMinimumSize(QSize(0, 50));
 
-        gridLayout_17->addWidget(pushButton_10, 3, 0, 1, 1);
+        gridLayout_17->addWidget(pushButton, 1, 0, 1, 1);
+
+        pushButton_11 = new QPushButton(groupBox_17);
+        pushButton_11->setObjectName(QString::fromUtf8("pushButton_11"));
+        pushButton_11->setMinimumSize(QSize(0, 50));
+
+        gridLayout_17->addWidget(pushButton_11, 4, 0, 1, 1);
 
 
         gridLayout_16->addWidget(groupBox_17, 0, 0, 1, 1);
@@ -502,14 +508,19 @@ public:
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 1109, 25));
+        menu = new QMenu(menubar);
+        menu->setObjectName(QString::fromUtf8("menu"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
 
+        menubar->addAction(menu->menuAction());
+        menu->addAction(action);
+
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -518,6 +529,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        action->setText(QCoreApplication::translate("MainWindow", "\320\243\320\277\321\200\320\260\320\262\320\273\320\265\320\275\320\270\320\265 \320\272\320\273\320\270\320\265\320\275\321\202\320\260\320\274\320\270", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "Find one", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Id", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
@@ -554,11 +566,11 @@ public:
         pushButton_4->setText(QCoreApplication::translate("MainWindow", "Add Item", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(add), QCoreApplication::translate("MainWindow", "Add item", nullptr));
         groupBox_17->setTitle(QCoreApplication::translate("MainWindow", "Sort", nullptr));
-        pushButton_11->setText(QCoreApplication::translate("MainWindow", "Sort by date added", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Sort by name", nullptr));
+        pushButton_10->setText(QCoreApplication::translate("MainWindow", "Sort by price", nullptr));
         pushButton_9->setText(QCoreApplication::translate("MainWindow", "Sort by id", nullptr));
         pushButton_12->setText(QCoreApplication::translate("MainWindow", "Sort by date of change", nullptr));
-        pushButton_10->setText(QCoreApplication::translate("MainWindow", "Sort by price", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "Sort by name", nullptr));
+        pushButton_11->setText(QCoreApplication::translate("MainWindow", "Sort by date added", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(sort), QCoreApplication::translate("MainWindow", "Sort", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "Id", nullptr));
@@ -576,6 +588,7 @@ public:
         ___qtablewidgetitem6->setText(QCoreApplication::translate("MainWindow", "Date added", nullptr));
         QTableWidgetItem *___qtablewidgetitem7 = tableWidget->horizontalHeaderItem(7);
         ___qtablewidgetitem7->setText(QCoreApplication::translate("MainWindow", "Date of change", nullptr));
+        menu->setTitle(QCoreApplication::translate("MainWindow", "\320\232\320\273\320\270\320\265\320\275\321\202\321\213", nullptr));
     } // retranslateUi
 
 };

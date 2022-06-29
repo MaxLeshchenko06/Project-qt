@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
         ui->statusbar->showMessage("open");
     }
     getProductsFromDB();
+    getClientsFromDB();
 }
 
 MainWindow::~MainWindow()
@@ -42,6 +43,23 @@ void MainWindow::getProductsFromDB()
         base.push_back(obj);
     }
     showAllProducts();
+}
+
+void MainWindow::getClientsFromDB()
+{
+    clientBase.clear();
+    query->exec("SELECT * FROM clients");
+    while(query->next()){
+        int id = query->value(0).toInt();
+        QString name = query->value(1).toString();
+        int discount = query->value(2).toInt();
+        QString phone = query->value(3).toString();
+        QString type = query->value(4).toString();
+        if(type == "static")
+            clientBase.push_back(new StaticClient(id, name, discount, phone));
+        else
+            clientBase.push_back(new GrowingClient(id, name, discount, phone));
+    }
 }
 
 void MainWindow::showAllProducts()
@@ -214,5 +232,87 @@ void MainWindow::on_checkBox_stateChanged(int arg1)
         ui->dateEdit_2->setEnabled(false);
     else
         ui->dateEdit_2->setEnabled(true);
+}
+
+
+void MainWindow::on_action_triggered()
+{
+    clientsW = new ClientsWindow(db, clientBase, this);
+    clientsW->exec();
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    for(int i = 1; i < base.size(); i++){
+        Product *tmp = base[i];
+        for(int j = i - 1;j >= 0; j--){
+            if(tmp->getName() < base[j]->getName())
+                base.swapItemsAt(j + 1, j);
+            else
+                break;
+        }
+    }
+    showAllProducts();
+}
+
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    for(int i = 1; i < base.size(); i++){
+        Product *tmp = base[i];
+        for(int j = i - 1;j >= 0; j--){
+            if(tmp->getId() < base[j]->getId())
+                base.swapItemsAt(j + 1, j);
+            else
+                break;
+        }
+    }
+    showAllProducts();
+}
+
+
+void MainWindow::on_pushButton_10_clicked()
+{
+    for(int i = 1; i < base.size(); i++){
+        Product *tmp = base[i];
+        for(int j = i - 1;j >= 0; j--){
+            if(tmp->getPrice() > base[j]->getPrice())
+                base.swapItemsAt(j + 1, j);
+            else
+                break;
+        }
+    }
+    showAllProducts();
+}
+
+
+void MainWindow::on_pushButton_12_clicked()
+{
+    for(int i = 1; i < base.size(); i++){
+        Product *tmp = base[i];
+        for(int j = i - 1;j >= 0; j--){
+            if(tmp->getDateOfChange() < base[j]->getDateOfChange())
+                base.swapItemsAt(j + 1, j);
+            else
+                break;
+        }
+    }
+    showAllProducts();
+}
+
+
+void MainWindow::on_pushButton_11_clicked()
+{
+    for(int i = 1; i < base.size(); i++){
+        Product *tmp = base[i];
+        for(int j = i - 1;j >= 0; j--){
+            if(tmp->getDateAdded() < base[j]->getDateAdded())
+                base.swapItemsAt(j + 1, j);
+            else
+                break;
+        }
+    }
+    showAllProducts();
 }
 

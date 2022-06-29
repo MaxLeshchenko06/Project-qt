@@ -9,6 +9,9 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    client.cpp \
+    clientswindow.cpp \
+    dialogeditclient.cpp \
     dialogedititem.cpp \
     findtable.cpp \
     main.cpp \
@@ -16,6 +19,9 @@ SOURCES += \
     product.cpp
 
 HEADERS += \
+    client.h \
+    clientswindow.h \
+    dialogeditclient.h \
     dialogedititem.h \
     findtable.h \
     mainwindow.h \
@@ -23,6 +29,8 @@ HEADERS += \
     product.h
 
 FORMS += \
+    clientswindow.ui \
+    dialogeditclient.ui \
     dialogedititem.ui \
     findtable.ui \
     mainwindow.ui

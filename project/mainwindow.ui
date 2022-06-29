@@ -33,7 +33,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -446,7 +446,7 @@
                 <widget class="QComboBox" name="comboBox">
                  <item>
                   <property name="text">
-                   <string> </string>
+                   <string/>
                   </property>
                  </item>
                  <item>
@@ -655,8 +655,8 @@
            <string>Sort</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_17">
-           <item row="6" column="0">
-            <widget class="QPushButton" name="pushButton_11">
+           <item row="3" column="0">
+            <widget class="QPushButton" name="pushButton_10">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -664,20 +664,7 @@
               </size>
              </property>
              <property name="text">
-              <string>Sort by date added</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QPushButton" name="pushButton">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>Sort by name</string>
+              <string>Sort by price</string>
              </property>
             </widget>
            </item>
@@ -694,7 +681,7 @@
              </property>
             </widget>
            </item>
-           <item row="4" column="0">
+           <item row="5" column="0">
             <widget class="QPushButton" name="pushButton_12">
              <property name="minimumSize">
               <size>
@@ -707,8 +694,8 @@
              </property>
             </widget>
            </item>
-           <item row="3" column="0">
-            <widget class="QPushButton" name="pushButton_10">
+           <item row="1" column="0">
+            <widget class="QPushButton" name="pushButton">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -716,7 +703,20 @@
               </size>
              </property>
              <property name="text">
-              <string>Sort by price</string>
+              <string>Sort by name</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QPushButton" name="pushButton_11">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Sort by date added</string>
              </property>
             </widget>
            </item>
@@ -797,8 +797,20 @@
      <height>25</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Клиенты</string>
+    </property>
+    <addaction name="action"/>
+   </widget>
+   <addaction name="menu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="action">
+   <property name="text">
+    <string>Управление клиентами</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

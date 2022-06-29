@@ -7,6 +7,7 @@
 #include <QVector>
 #include <iostream>
 #include "product.h"
+#include "myexception.h"
 
 namespace Ui {
 class DialogEditItem;

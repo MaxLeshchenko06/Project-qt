@@ -3,7 +3,6 @@
 
 #include <QString>
 #include <QDate>
-#include "myexception.h"
 
 class Product
 {

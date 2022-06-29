@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    const uint offsetsAndSize[26];
-    char stringdata0[231];
+    const uint offsetsAndSize[40];
+    char stringdata0[389];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs), len 
@@ -32,24 +32,36 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 QT_MOC_LITERAL(0, 10), // "MainWindow"
 QT_MOC_LITERAL(11, 17), // "getProductsFromDB"
 QT_MOC_LITERAL(29, 0), // ""
-QT_MOC_LITERAL(30, 15), // "showAllProducts"
-QT_MOC_LITERAL(46, 32), // "on_tableWidget_itemDoubleClicked"
-QT_MOC_LITERAL(79, 17), // "QTableWidgetItem*"
-QT_MOC_LITERAL(97, 4), // "item"
-QT_MOC_LITERAL(102, 23), // "on_pushButton_4_clicked"
-QT_MOC_LITERAL(126, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(150, 23), // "on_pushButton_3_clicked"
-QT_MOC_LITERAL(174, 26), // "on_checkBox_2_stateChanged"
-QT_MOC_LITERAL(201, 4), // "arg1"
-QT_MOC_LITERAL(206, 24) // "on_checkBox_stateChanged"
+QT_MOC_LITERAL(30, 16), // "getClientsFromDB"
+QT_MOC_LITERAL(47, 15), // "showAllProducts"
+QT_MOC_LITERAL(63, 32), // "on_tableWidget_itemDoubleClicked"
+QT_MOC_LITERAL(96, 17), // "QTableWidgetItem*"
+QT_MOC_LITERAL(114, 4), // "item"
+QT_MOC_LITERAL(119, 23), // "on_pushButton_4_clicked"
+QT_MOC_LITERAL(143, 23), // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(167, 23), // "on_pushButton_3_clicked"
+QT_MOC_LITERAL(191, 26), // "on_checkBox_2_stateChanged"
+QT_MOC_LITERAL(218, 4), // "arg1"
+QT_MOC_LITERAL(223, 24), // "on_checkBox_stateChanged"
+QT_MOC_LITERAL(248, 19), // "on_action_triggered"
+QT_MOC_LITERAL(268, 21), // "on_pushButton_clicked"
+QT_MOC_LITERAL(290, 23), // "on_pushButton_9_clicked"
+QT_MOC_LITERAL(314, 24), // "on_pushButton_10_clicked"
+QT_MOC_LITERAL(339, 24), // "on_pushButton_12_clicked"
+QT_MOC_LITERAL(364, 24) // "on_pushButton_11_clicked"
 
     },
     "MainWindow\0getProductsFromDB\0\0"
-    "showAllProducts\0on_tableWidget_itemDoubleClicked\0"
+    "getClientsFromDB\0showAllProducts\0"
+    "on_tableWidget_itemDoubleClicked\0"
     "QTableWidgetItem*\0item\0on_pushButton_4_clicked\0"
     "on_pushButton_2_clicked\0on_pushButton_3_clicked\0"
     "on_checkBox_2_stateChanged\0arg1\0"
-    "on_checkBox_stateChanged"
+    "on_checkBox_stateChanged\0on_action_triggered\0"
+    "on_pushButton_clicked\0on_pushButton_9_clicked\0"
+    "on_pushButton_10_clicked\0"
+    "on_pushButton_12_clicked\0"
+    "on_pushButton_11_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -59,7 +71,7 @@ static const uint qt_meta_data_MainWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+      15,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -67,24 +79,38 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   62,    2, 0x0a,    1 /* Public */,
-       3,    0,   63,    2, 0x0a,    2 /* Public */,
-       4,    1,   64,    2, 0x08,    3 /* Private */,
-       7,    0,   67,    2, 0x08,    5 /* Private */,
-       8,    0,   68,    2, 0x08,    6 /* Private */,
-       9,    0,   69,    2, 0x08,    7 /* Private */,
-      10,    1,   70,    2, 0x08,    8 /* Private */,
-      12,    1,   73,    2, 0x08,   10 /* Private */,
+       1,    0,  104,    2, 0x0a,    1 /* Public */,
+       3,    0,  105,    2, 0x0a,    2 /* Public */,
+       4,    0,  106,    2, 0x0a,    3 /* Public */,
+       5,    1,  107,    2, 0x08,    4 /* Private */,
+       8,    0,  110,    2, 0x08,    6 /* Private */,
+       9,    0,  111,    2, 0x08,    7 /* Private */,
+      10,    0,  112,    2, 0x08,    8 /* Private */,
+      11,    1,  113,    2, 0x08,    9 /* Private */,
+      13,    1,  116,    2, 0x08,   11 /* Private */,
+      14,    0,  119,    2, 0x08,   13 /* Private */,
+      15,    0,  120,    2, 0x08,   14 /* Private */,
+      16,    0,  121,    2, 0x08,   15 /* Private */,
+      17,    0,  122,    2, 0x08,   16 /* Private */,
+      18,    0,  123,    2, 0x08,   17 /* Private */,
+      19,    0,  124,    2, 0x08,   18 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 5,    6,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 6,    7,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   11,
-    QMetaType::Void, QMetaType::Int,   11,
+    QMetaType::Void, QMetaType::Int,   12,
+    QMetaType::Void, QMetaType::Int,   12,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -96,13 +122,20 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         (void)_t;
         switch (_id) {
         case 0: _t->getProductsFromDB(); break;
-        case 1: _t->showAllProducts(); break;
-        case 2: _t->on_tableWidget_itemDoubleClicked((*reinterpret_cast< std::add_pointer_t<QTableWidgetItem*>>(_a[1]))); break;
-        case 3: _t->on_pushButton_4_clicked(); break;
-        case 4: _t->on_pushButton_2_clicked(); break;
-        case 5: _t->on_pushButton_3_clicked(); break;
-        case 6: _t->on_checkBox_2_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 7: _t->on_checkBox_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 1: _t->getClientsFromDB(); break;
+        case 2: _t->showAllProducts(); break;
+        case 3: _t->on_tableWidget_itemDoubleClicked((*reinterpret_cast< std::add_pointer_t<QTableWidgetItem*>>(_a[1]))); break;
+        case 4: _t->on_pushButton_4_clicked(); break;
+        case 5: _t->on_pushButton_2_clicked(); break;
+        case 6: _t->on_pushButton_3_clicked(); break;
+        case 7: _t->on_checkBox_2_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 8: _t->on_checkBox_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 9: _t->on_action_triggered(); break;
+        case 10: _t->on_pushButton_clicked(); break;
+        case 11: _t->on_pushButton_9_clicked(); break;
+        case 12: _t->on_pushButton_10_clicked(); break;
+        case 13: _t->on_pushButton_12_clicked(); break;
+        case 14: _t->on_pushButton_11_clicked(); break;
         default: ;
         }
     }
@@ -116,7 +149,7 @@ const QMetaObject MainWindow::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_MainWindow_t
 , QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QTableWidgetItem *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QTableWidgetItem *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
@@ -143,13 +176,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 15)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 15;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 15)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 8;
+        _id -= 15;
     }
     return _id;
 }
