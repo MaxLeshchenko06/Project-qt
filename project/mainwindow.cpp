@@ -316,3 +316,10 @@ void MainWindow::on_pushButton_11_clicked()
     showAllProducts();
 }
 
+
+void MainWindow::on_action_2_triggered()
+{
+    cashR = new CashRegister(db, clientBase, base, this);
+    cashR->exec();
+}
+

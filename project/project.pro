@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    cashregister.cpp \
     client.cpp \
     clientswindow.cpp \
     dialogeditclient.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
     product.cpp
 
 HEADERS += \
+    cashregister.h \
     client.h \
     clientswindow.h \
     dialogeditclient.h \
@@ -29,6 +31,7 @@ HEADERS += \
     product.h
 
 FORMS += \
+    cashregister.ui \
     clientswindow.ui \
     dialogeditclient.ui \
     dialogedititem.ui \

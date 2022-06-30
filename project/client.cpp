@@ -61,7 +61,7 @@ StaticClient::StaticClient(int id, QString name, int discount, QString phone):
 
 float StaticClient::sale(float price)
 {
-    return price * (1 - discount / 100);
+    return price * (100 - discount) / 100;
 }
 
 QString StaticClient::getType() const &
@@ -78,7 +78,7 @@ float GrowingClient::sale(float price)
 {
     if(discount < 15 && price >= 1000.0)
         discount++;
-    return price * (1 - discount / 100);
+    return price * (100 - discount) / 100;
 }
 
 QString GrowingClient::getType() const &

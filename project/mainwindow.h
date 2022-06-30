@@ -13,6 +13,7 @@
 #include "findtable.h"
 #include "client.h"
 #include "clientswindow.h"
+#include "cashregister.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -55,6 +56,8 @@ private slots:
 
     void on_pushButton_11_clicked();
 
+    void on_action_2_triggered();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
@@ -64,5 +67,6 @@ private:
     FindTable* findTable;
     QVector<Client*> clientBase;
     ClientsWindow* clientsW;
+    CashRegister* cashR;
 };
 #endif // MAINWINDOW_H

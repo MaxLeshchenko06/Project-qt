@@ -96,6 +96,7 @@ public:
 
         doubleSpinBox = new QDoubleSpinBox(groupBox);
         doubleSpinBox->setObjectName(QString::fromUtf8("doubleSpinBox"));
+        doubleSpinBox->setMaximum(1000000.000000000000000);
 
         formLayout_2->setWidget(2, QFormLayout::FieldRole, doubleSpinBox);
 
@@ -108,6 +109,7 @@ public:
 
         spinBox = new QSpinBox(groupBox);
         spinBox->setObjectName(QString::fromUtf8("spinBox"));
+        spinBox->setMaximum(1000000);
 
         formLayout_2->setWidget(3, QFormLayout::FieldRole, spinBox);
 
@@ -131,6 +133,11 @@ public:
         formLayout_2->setWidget(5, QFormLayout::LabelRole, label_10);
 
         comboBox = new QComboBox(groupBox);
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->addItem(QString());
@@ -202,7 +209,12 @@ public:
         label_10->setText(QCoreApplication::translate("DialogEditItem", "Type", nullptr));
         comboBox->setItemText(0, QCoreApplication::translate("DialogEditItem", "None", nullptr));
         comboBox->setItemText(1, QCoreApplication::translate("DialogEditItem", "Food", nullptr));
-        comboBox->setItemText(2, QCoreApplication::translate("DialogEditItem", "Other", nullptr));
+        comboBox->setItemText(2, QCoreApplication::translate("DialogEditItem", "Appliances", nullptr));
+        comboBox->setItemText(3, QCoreApplication::translate("DialogEditItem", "Paints", nullptr));
+        comboBox->setItemText(4, QCoreApplication::translate("DialogEditItem", "Construction materials", nullptr));
+        comboBox->setItemText(5, QCoreApplication::translate("DialogEditItem", "Nails", nullptr));
+        comboBox->setItemText(6, QCoreApplication::translate("DialogEditItem", "Garden tools", nullptr));
+        comboBox->setItemText(7, QCoreApplication::translate("DialogEditItem", "Other", nullptr));
 
         label_11->setText(QCoreApplication::translate("DialogEditItem", "Date added", nullptr));
         label_12->setText(QCoreApplication::translate("DialogEditItem", "Date of change", nullptr));

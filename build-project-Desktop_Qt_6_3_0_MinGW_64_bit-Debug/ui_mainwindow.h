@@ -39,6 +39,7 @@ class Ui_MainWindow
 {
 public:
     QAction *action;
+    QAction *action_2;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QTabWidget *tabWidget;
@@ -106,6 +107,7 @@ public:
     QTableWidget *tableWidget;
     QMenuBar *menubar;
     QMenu *menu;
+    QMenu *menu_2;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -116,6 +118,8 @@ public:
         MainWindow->setStyleSheet(QString::fromUtf8("background-color: white;"));
         action = new QAction(MainWindow);
         action->setObjectName(QString::fromUtf8("action"));
+        action_2 = new QAction(MainWindow);
+        action_2->setObjectName(QString::fromUtf8("action_2"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
@@ -333,6 +337,11 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
 
         formLayout_2->setWidget(10, QFormLayout::FieldRole, comboBox);
@@ -414,6 +423,11 @@ public:
         formLayout_3->setWidget(4, QFormLayout::LabelRole, label_13);
 
         comboBox_2 = new QComboBox(groupBox_6);
+        comboBox_2->addItem(QString());
+        comboBox_2->addItem(QString());
+        comboBox_2->addItem(QString());
+        comboBox_2->addItem(QString());
+        comboBox_2->addItem(QString());
         comboBox_2->addItem(QString());
         comboBox_2->addItem(QString());
         comboBox_2->addItem(QString());
@@ -510,17 +524,21 @@ public:
         menubar->setGeometry(QRect(0, 0, 1109, 25));
         menu = new QMenu(menubar);
         menu->setObjectName(QString::fromUtf8("menu"));
+        menu_2 = new QMenu(menubar);
+        menu_2->setObjectName(QString::fromUtf8("menu_2"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
 
         menubar->addAction(menu->menuAction());
+        menubar->addAction(menu_2->menuAction());
         menu->addAction(action);
+        menu_2->addAction(action_2);
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -530,6 +548,7 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         action->setText(QCoreApplication::translate("MainWindow", "\320\243\320\277\321\200\320\260\320\262\320\273\320\265\320\275\320\270\320\265 \320\272\320\273\320\270\320\265\320\275\321\202\320\260\320\274\320\270", nullptr));
+        action_2->setText(QCoreApplication::translate("MainWindow", "\320\232\320\260\321\201\321\201\320\260", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "Find one", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Id", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
@@ -550,7 +569,12 @@ public:
         comboBox->setItemText(0, QString());
         comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "None", nullptr));
         comboBox->setItemText(2, QCoreApplication::translate("MainWindow", "Food", nullptr));
-        comboBox->setItemText(3, QCoreApplication::translate("MainWindow", "Other", nullptr));
+        comboBox->setItemText(3, QCoreApplication::translate("MainWindow", "Appliances", nullptr));
+        comboBox->setItemText(4, QCoreApplication::translate("MainWindow", "Paints", nullptr));
+        comboBox->setItemText(5, QCoreApplication::translate("MainWindow", "Construction materials", nullptr));
+        comboBox->setItemText(6, QCoreApplication::translate("MainWindow", "Nails", nullptr));
+        comboBox->setItemText(7, QCoreApplication::translate("MainWindow", "Garden tools", nullptr));
+        comboBox->setItemText(8, QCoreApplication::translate("MainWindow", "Other", nullptr));
 
         tabWidget->setTabText(tabWidget->indexOf(find), QCoreApplication::translate("MainWindow", "Find item", nullptr));
         groupBox_6->setTitle(QCoreApplication::translate("MainWindow", "Add", nullptr));
@@ -561,7 +585,12 @@ public:
         label_13->setText(QCoreApplication::translate("MainWindow", "Type", nullptr));
         comboBox_2->setItemText(0, QCoreApplication::translate("MainWindow", "None", nullptr));
         comboBox_2->setItemText(1, QCoreApplication::translate("MainWindow", "Food", nullptr));
-        comboBox_2->setItemText(2, QCoreApplication::translate("MainWindow", "Other", nullptr));
+        comboBox_2->setItemText(2, QCoreApplication::translate("MainWindow", "Appliances", nullptr));
+        comboBox_2->setItemText(3, QCoreApplication::translate("MainWindow", "Paints", nullptr));
+        comboBox_2->setItemText(4, QCoreApplication::translate("MainWindow", "Construction materials", nullptr));
+        comboBox_2->setItemText(5, QCoreApplication::translate("MainWindow", "Nails", nullptr));
+        comboBox_2->setItemText(6, QCoreApplication::translate("MainWindow", "Garden tools", nullptr));
+        comboBox_2->setItemText(7, QCoreApplication::translate("MainWindow", "Other", nullptr));
 
         pushButton_4->setText(QCoreApplication::translate("MainWindow", "Add Item", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(add), QCoreApplication::translate("MainWindow", "Add item", nullptr));
@@ -589,6 +618,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem7 = tableWidget->horizontalHeaderItem(7);
         ___qtablewidgetitem7->setText(QCoreApplication::translate("MainWindow", "Date of change", nullptr));
         menu->setTitle(QCoreApplication::translate("MainWindow", "\320\232\320\273\320\270\320\265\320\275\321\202\321\213", nullptr));
+        menu_2->setTitle(QCoreApplication::translate("MainWindow", "\320\232\320\260\321\201\321\201\320\260", nullptr));
     } // retranslateUi
 
 };
